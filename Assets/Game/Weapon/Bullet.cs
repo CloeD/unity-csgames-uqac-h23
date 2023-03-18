@@ -18,14 +18,14 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        //if (col.gameObject.name != "PlayerCapsule" && col.gameObject.name != "Capsule")
-        //{
-        Debug.Log(col.transform.position);
-        Debug.Log(col.gameObject.name);
-            Instantiate(ImpactParticleSystem, col.transform.position, col.transform.rotation);
-            ImpactParticleSystem.Play();
-            Destroy(gameObject);
-        //}
+        ContactPoint contact = col.contacts[0];
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        Vector3 pos = contact.point;
+        var clone = Instantiate(ImpactParticleSystem, pos, rot);
+        clone.transform.forward = col.transform.forward;
+        clone.Play();
+        Destroy(clone, 2f);
+        Destroy(gameObject);
     }
 
 }

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] GameObject _BallSpwanPoint;
-    [SerializeField] GameObject _Ball;
+    [SerializeField] 
+    public GameObject _BallSpwanPoint;
+    [SerializeField] 
+    public GameObject _Ball;
 
     // Update is called once per frame
     void Update()

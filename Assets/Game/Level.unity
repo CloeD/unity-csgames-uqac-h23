@@ -761,6 +761,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BallSpwanPoint: {fileID: 1768332530}
   _Ball: {fileID: 899428459418414007, guid: ef45b7a98c77a9d409f0268503387bcf, type: 3}
+  _CurrentAmmo: 30
+  _MaxAmmo: 260
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0
